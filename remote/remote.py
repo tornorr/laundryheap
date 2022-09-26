@@ -15,7 +15,7 @@ class Remote(commands.Cog):
     async def pet(self, ctx):
         petMod = random.randint(1,100)
         if petMod <= 79:
-            await ctx.send('YOOOOO! <:dv_pogberry:894740347698184232')
+            await ctx.send('YOOOOO! <:dv_pogberry:894740347698184232>')
         elif petMod <= 94:
             await ctx.send('....wha? huh? <:dv_:dv_drowsysnooz:894740491453743115>')
         elif petMod <= 99:
