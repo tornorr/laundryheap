@@ -3,9 +3,13 @@ import random
 
 from discord.ext import commands
 
-class remote(commands.Cog):
+class Remote(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        print(message.content)
 
     @commands.command()
     async def pet(self, ctx):
@@ -26,3 +30,6 @@ class remote(commands.Cog):
         channel = ctx.get_channel(channeldict[channel])
         if ctx.guild == 720120185289310229:
             await ctx.send(f'{remotemsg}')
+ 
+def setup(bot):
+    bot.add_cog(Remote(bot))
