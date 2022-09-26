@@ -31,5 +31,5 @@ class Remote(commands.Cog):
         if ctx.guild == 720120185289310229:
             await channel.send(remotemsg)
  
-def setup(bot):
-    bot.add_cog(Remote(bot))
+async def setup(bot):
+    await bot.add_cog(Remote(bot))
