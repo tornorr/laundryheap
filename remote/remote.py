@@ -4,6 +4,7 @@ import random
 class Remote(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        intents = discord.Intents.default()
         
     @commands.Cog.listener()
     async def on_message(self, message):
