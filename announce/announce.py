@@ -7,7 +7,7 @@ class announce(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @tasks.loop(time=time(hour=16,minute=30),count=1)
+    @tasks.loop(time=time(hour=10,minute=38),count=1)
     async def annnounce(self):
         channel = self.bot.get_channel(720120185729843273)
         spraw = open("AutoAnnounceSheet.csv", 'r')
