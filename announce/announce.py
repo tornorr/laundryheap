@@ -3,7 +3,7 @@ from datetime import date, time
 
 from discord.ext import commands, tasks
 
-class autoannounce(commands.Cog):
+class announce(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -132,4 +132,4 @@ class autoannounce(commands.Cog):
                 await channel.send(announcement)
 
 async def setup(bot):
-    await bot.add_cog(autoannounce(bot))
+    await bot.add_cog(announce(bot))
