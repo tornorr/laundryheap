@@ -6,8 +6,9 @@ from discord.ext import commands, tasks
 class announce(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.announce.start()
 
-    @tasks.loop(time=time(hour=17,minute=17),count=1)
+    @tasks.loop(time=time(hour=5,minute=1))
     async def annnounce(self):
         channel = self.bot.get_channel(720120185729843273)
         channel.send("hey")
@@ -131,6 +132,8 @@ class announce(commands.Cog):
                     combo,"\n**Base Odds**:", odds, "\n**Social Clone Odds**:", social + "%", "\n\n**" + drag + 
                     "** costs :dv_gem:", price, "and will expire on", formdate)
                 await channel.send(announcement)
-
+                
+autoannounce.start()
+                
 async def setup(bot):
     await bot.add_cog(announce(bot))
