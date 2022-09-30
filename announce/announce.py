@@ -8,10 +8,10 @@ class announce(commands.Cog):
         self.bot = bot
         self.announce.start()
 
-    @tasks.loop(time=time(hour=5,minute=14))
+    @tasks.loop(time=time(hour=5,minute=17))
     async def announce(self):
         channel = self.bot.get_channel(720120185729843273)
-        channel.send("hey")
+        await channel.send("hey")
         spraw = open("AutoAnnounceSheet.csv", 'r')
         for line in spraw:
             splist = line.split(",")
