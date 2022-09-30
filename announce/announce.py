@@ -8,15 +8,15 @@ class announce(commands.Cog):
         self.bot = bot
         self.announce.start()
 
-    @tasks.loop(time=time(hour=5,minute=18))
+    @tasks.loop(time=time(hour=5,minute=20))
     async def announce(self):
         channel = self.bot.get_channel(720120185729843273)
-        await channel.send("hey")
         spraw = open("AutoAnnounceSheet.csv", 'r')
         for line in spraw:
             splist = line.split(",")
             announcement = ""
             if (date.today())[:5] == splist[12]:
+                await channel.send("hey")
                 drag = splist[0]
                 caption = splist[2]
                 gemtest = splist[9]
