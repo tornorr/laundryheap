@@ -8,14 +8,15 @@ class announce(commands.Cog):
         self.bot = bot
         self.announce.start()
 
-    @tasks.loop(time=time(hour=16,minute=7))
+    @tasks.loop(time=time(hour=16,minute=9))
     async def announce(self):
         channel = self.bot.get_channel(720120185729843273)
+        await channel.send("hey1")
         spraw = open("tornorr/laundryheap/announce/AutoAnnounceSheet.csv", 'r')
         for line in spraw:
             splist = line.split(",")
             announcement = ""
-            await channel.send("hey")
+            await channel.send("hey2")
             if (date.today())[:5] == splist[12]:
                 drag = splist[0]
                 caption = splist[2]
@@ -27,6 +28,7 @@ class announce(commands.Cog):
                 else:
                     announcement += ("**LEFT:dragon::", drag + "**\n" + caption)
             if (date.today())[:5] == splist[11]:
+                await channel.send("hey3")
                 drag = splist[0]
                 caption = splist[1]
                 timer = splist[6]
