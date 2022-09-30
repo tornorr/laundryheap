@@ -133,7 +133,5 @@ class announce(commands.Cog):
                     "** costs :dv_gem:", price, "and will expire on", formdate)
                 await channel.send(announcement)
                 
-autoannounce.start()
-                
 async def setup(bot):
     await bot.add_cog(announce(bot))
