@@ -12,7 +12,7 @@ class announce(commands.Cog):
     async def announce(self):
         channel = self.bot.get_channel(720120185729843273)
         await channel.send("hey1")
-        spraw = open("tornorr/laundryheap/announce/AutoAnnounceSheet.csv", 'r')
+        spraw = open("AutoAnnounceSheet.csv", 'r')
         for line in spraw:
             splist = line.split(",")
             announcement = ""
